@@ -189,7 +189,7 @@ document.getElementById("Temp2").innerHTML=result["result"]["temp_curr"];
 		<!------------------------------------------------------------------------->
 		// Include after jQuery (required)  
 <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
-		
+	<script type="text/javascript">		
 						// Set your API key first  
 xively.setKey( "YOUR_KEY_HERE" );  
 // Get feed content  
@@ -200,7 +200,7 @@ xively.feed.get( "504", function( data ) {
 xively.datastream.subscribe( "61916", "sine60", function( event, data ) {  
   console.log( data.current_value ); // Logs value changes in realtime  
 });  	 
-							 
+</script>							 
 	<!------------------------------------------------------------------------->								 
 							 
 							  </div>
