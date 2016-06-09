@@ -199,7 +199,14 @@ xively.feed.get( "504", function( data ) {
 // Get realtime updates on a datastream  
 xively.datastream.subscribe( "61916", "sine60", function( event, data ) {  
   console.log( data.current_value ); // Logs value changes in realtime  
-});  	 
+}); 
+
+
+
+// Set current value on elements  
+$('.datastream-value').xively('get', { feed: 61916, datastream: 'sine60' });  
+// Set and update value in realtime  
+$('.datastream-value').xively('live', { feed: 61916, datastream: 'sawtooth60' }); 
 </script>							 
 	<!------------------------------------------------------------------------->								 
 							 
