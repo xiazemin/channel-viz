@@ -186,6 +186,23 @@ document.getElementById("Temp2").innerHTML=result["result"]["temp_curr"];
 		
 		
 		<script type="text/javascript" src="http://api.k780.com:88/?app=weather.today&weaid=101200101&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data2"></script>
+		<!------------------------------------------------------------------------->
+		// Include after jQuery (required)  
+<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
+		
+						// Set your API key first  
+xively.setKey( "YOUR_KEY_HERE" );  
+// Get feed content  
+xively.feed.get( "504", function( data ) {  
+  console.log( data.title ); // Logs the feed title  
+});  
+// Get realtime updates on a datastream  
+xively.datastream.subscribe( "61916", "sine60", function( event, data ) {  
+  console.log( data.current_value ); // Logs value changes in realtime  
+});  	 
+							 
+	<!------------------------------------------------------------------------->								 
+							 
 							  </div>
 							<div class="row">
 								<div class="large-4 columns">
