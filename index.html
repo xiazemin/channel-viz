@@ -355,6 +355,84 @@ $('.datastream-value').xively('live', { feed: 61916, datastream: 'sawtooth60' })
 							<div class="large-8 columns value"></div>
 						</div>
 					</div>
+					  <div style="width:600px;height:500px;background:red;border:1px solid;"> 
+							  夏泽民更改的版本20160606
+							  <div style="width:20%;height:20%;border:1px solid;">
+城市：<div id="city"></div>
+温度范围：<div id="TempRange"></div>
+当前温度：<div id="Temp">test</div>
+</div>
+		
+		<script type="text/javascript">
+		function data(result)
+		{
+document.getElementById("Temp").innerHTML=result["result"]["temp_curr"];
+				 document .getElementById('TempRange').innerHTML=result["result"]["temperature"];
+      document .getElementById('city').innerHTML=result["result"]["citynm"];
+			}
+			</script>
+			
+	
+			<div style="width:20%;height:20%;border:1px solid;">
+城市：<div id="city1"></div>
+温度范围：<div id="TempRange1"></div>
+当前温度：<div id="Temp1">test</div>
+</div>
+		
+		<script type="text/javascript">
+		function data1(result)
+		{
+document.getElementById("Temp1").innerHTML=result["result"]["temp_curr"];
+				 document .getElementById('TempRange1').innerHTML=result["result"]["temperature"];
+      document .getElementById('city1').innerHTML=result["result"]["citynm"];
+			}
+			</script>
+		
+				<div style="width:20%;height:20%;border:1px solid;">
+城市：<div id="city2"></div>
+温度范围：<div id="TempRange2"></div>
+当前温度：<div id="Temp2">test</div>
+</div>
+		
+		<script type="text/javascript">
+		function data2(result)
+		{
+document.getElementById("Temp2").innerHTML=result["result"]["temp_curr"];
+				 document .getElementById('TempRange2').innerHTML=result["result"]["temperature"];
+      document .getElementById('city2').innerHTML=result["result"]["citynm"];
+			}
+			
+		</script>
+		<script type="text/javascript" src="http://api.k780.com:88/?app=weather.today&weaid=101020100&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data"></script>
+		
+
+     <script type="text/javascript" src="http://api.k780.com:88/?app=weather.today&weaid=101010100&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data1"></script>
+		
+		
+		<script type="text/javascript" src="http://api.k780.com:88/?app=weather.today&weaid=101200101&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data2"></script>
+		<!------------------------------------------------------------------------->
+		// Include after jQuery (required)  
+<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
+	<script type="text/javascript">		
+						// Set your API key first  
+xively.setKey( "Iw025lVtk1uHCb0xGPXptjHXbl9LWdOX8UDlmBlq2UuoaHBA" );  
+// Get feed content  
+xively.feed.get( "504", function( data ) {  
+  console.log( data.title ); // Logs the feed title  
+});  
+// Get realtime updates on a datastream  
+xively.datastream.subscribe( "61916", "sine60", function( event, data ) {  
+  console.log( data.current_value ); // Logs value changes in realtime  
+}); 
+// Set current value on elements  
+$('.datastream-value').xively('get', { feed: 61916, datastream: 'sine60' });  
+// Set and update value in realtime  
+$('.datastream-value').xively('live', { feed: 61916, datastream: 'sawtooth60' }); 
+</script>							 
+	<!------------------------------------------------------------------------->								 
+							 
+							  </div>
+							
 					<div class="large-5 columns">
 						<h4 class="subheader">Location</h4>
 						<div class="alert alert-box hidden no-location">
